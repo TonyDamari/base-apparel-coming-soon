@@ -1,0 +1,153 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+:root {
+    /* Colors */
+
+    /* Primary */
+    --desaturated-red: hsl(0, 36%, 70%);
+    --soft-red: hsl(0, 93%, 68%);
+
+    /* Neutral */
+    --dark-grayish-red: hsl(0, 6%, 24%);
+
+    /* Gradients */
+    --gradient-white: linear-gradient(
+        135deg,
+        hsl(0, 0%, 100%),
+        hsl(0, 100%, 98%)
+    );
+    --gradient-soft-red: linear-gradient(
+        135deg,
+        hsl(0, 80%, 86%),
+        hsl(0, 74%, 74%)
+    );
+
+    /* spacing */
+    --padding: 2em;
+    --margin: 0.5em;
+}
+
+main{
+    margin-bottom: 2em;
+}
+
+header {
+    padding: var(--padding);
+}
+
+.hero-text {
+    padding: var(--padding);
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0.5em auto;
+    letter-spacing: 1rem;
+}
+
+.hero-text h1 span {
+    color: var(--desaturated-red);
+    font-weight: 300;
+}
+
+.hero-text p {
+    margin-bottom: 2em;
+    line-height: 1.5;
+    font-size: 0.9rem;
+    color: var(--desaturated-red);
+}
+
+.hero-text input {
+    padding: 1em;
+    width: 90%;
+    border: 1px solid var(--desaturated-red);
+    border-radius: 25px;
+    outline: none;
+   
+}
+
+.hero-text input:active, .hero-text input:focus{
+       border: 2px solid var(--soft-red);
+}
+
+.hero-text input::placeholder {
+    color: var(--desaturated-red);
+}
+
+.hero-text button {
+    background: var(--soft-red);
+    border: none;
+    border-radius: 25px;
+    padding: .8em 1.5em;
+    display: grid;
+    place-content: center;
+    position: absolute;
+    right: 5%;
+    bottom: 35%;
+}
+
+.hero-text .error{
+    color: var(--soft-red);
+    font-size: .8rem;
+    margin: .2em 0 0 2em;
+    visibility: hidden;
+}
+
+.hero-text .error.active{
+    visibility: visible;
+}
+
+form{
+    margin-bottom: 2em;
+    position: relative;
+  
+}
+
+
+@media (min-width: 600px) {
+    body {
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+    }
+
+    main {
+        background: url(./images/bg-pattern-desktop.svg);
+        max-width: 900px;
+        display: grid;
+        grid-template-columns: 2fr 1.5fr;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    header {
+        grid-row: 1/2;
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .hero-img {
+        grid-row: 1/3;
+
+        width: 100%;
+    }
+
+    .hero-img img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero-text {
+        text-align: left;
+        width: 70%;
+        margin: 0 auto;
+        padding: 2em;
+    }
+}
